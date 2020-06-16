@@ -16,6 +16,7 @@ class Unity1week16thController < ApplicationController
     records_raw = Unity1week16thRecord.all
     records = []
     records_raw.each do |record_raw|
+      record = {}
       record[:name] = record_raw.user
       record[:score] = record_raw.score
       record[:date] = record_raw.updated_at.strftime("%Y/%m/%d")
