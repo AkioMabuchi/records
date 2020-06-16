@@ -7,7 +7,7 @@ class Unity1week16thController < ApplicationController
   def show
   end
 
-  def send_from_unity e
+  def send_from_unity
     record = Unity1week16thRecord.new(user: params[:name], score: params[:score])
     record.save
   end
