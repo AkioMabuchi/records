@@ -13,7 +13,15 @@ class Unity1week16thController < ApplicationController
   end
 
   def receive_from_unity
-    records = Unity1week16thRecord.all
+    records_raw = Unity1week16thRecord.all
+    records = []
+    records_raw.each do |record_raw|
+      record[:name] = record_raw.user
+      record[:score] = record_raw.score
+      record[:date] = record_raw.updated_at.strftime("%Y/%m/%d")
+
+      records.append(record)
+    end
     render json: records
   end
 end
