@@ -15,7 +15,7 @@ class PsyberZoneController < ApplicationController
       end
     else
       record = PsyberZoneRecord.new(
-          player_id: pamras[:player_id],
+          player_id: params[:player_id],
           name: params[:name],
           score: params[:score]
       )
@@ -25,7 +25,7 @@ class PsyberZoneController < ApplicationController
   end
 
   def receive_from_unity
-    records_raw = PsyberZoneRecord.all
+    records_raw = PsyberZoneRecord.all.order(score: :desc)
     records_set = {}
     records = []
     records_raw.each do |record_raw|
