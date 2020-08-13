@@ -10,18 +10,18 @@ class PsyberZoneController < ApplicationController
     record = PsyberZoneRecord.find_by(player_id: params[:player_id])
     if record
       record.name = params[:name]
-      if params[:score] > record.score
+      if params[:score].to_i > record.score.to_i
         record.score = params[:score]
       end
+      record.save
     else
-      record = PsyberZoneRecord.new(
+      new_record = PsyberZoneRecord.new(
           player_id: params[:player_id],
           name: params[:name],
           score: params[:score]
       )
+      new_record.save
     end
-
-    record.save
   end
 
   def receive_from_unity
