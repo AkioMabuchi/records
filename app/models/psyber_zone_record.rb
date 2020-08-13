@@ -1,0 +1,2 @@
+class PsyberZoneRecord < ApplicationRecord
+end
