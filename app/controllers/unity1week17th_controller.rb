@@ -1,7 +1,7 @@
 class Unity1week17thController < ApplicationController
   protect_from_forgery except: [:send]
-  
-  def send
+
+  def send_stage
     stage = FairyPuzzleOriginalStage.new(
         name: params[:name],
         title: params[:title],
@@ -12,7 +12,7 @@ class Unity1week17thController < ApplicationController
     stage.save!
   end
 
-  def receive
+  def receive_stages
     raw_stages = FairyPuzzleOriginalStage.all.order(updated_at: :desc)
 
     stages = []
