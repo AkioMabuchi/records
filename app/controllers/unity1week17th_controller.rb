@@ -1,5 +1,5 @@
 class Unity1week17thController < ApplicationController
-  protect_from_forgery except: [:send]
+  protect_from_forgery except: [:send_stage]
 
   def send_stage
     stage = FairyPuzzleOriginalStage.new(
