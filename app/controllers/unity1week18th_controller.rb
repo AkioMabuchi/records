@@ -2,13 +2,21 @@ class Unity1week18thController < ApplicationController
   protect_from_forgery except: [:send_record]
 
   def send_record
-    record = NeondromeRecord.new(
-        player_id: params[:player_id],
-        name: params[:name],
-        score: params[:score]
-    )
+    record = NeondromeRecord.find_by(player_id: params[:player_id])
+    if record
+      record.name = params[:name]
+      record.score = params[:score]
 
-    record.save!
+      record.save!
+    else
+      new_record = NeondromeRecord.new(
+          player_id: params[:player_id],
+          name: params[:name],
+          score: params[:score]
+      )
+
+      new_record.save!
+    end
   end
 
   def receive_records
