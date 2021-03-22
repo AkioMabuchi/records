@@ -1,0 +1,2 @@
+module CubicPuzzleHelper
+end
