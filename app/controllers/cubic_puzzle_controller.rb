@@ -32,7 +32,7 @@ class CubicPuzzleController < ApplicationController
   end
 
   private
-  
+
   def receive_process(raw_stages)
     stages = []
 
