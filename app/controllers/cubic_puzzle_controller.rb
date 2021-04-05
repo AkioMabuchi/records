@@ -16,6 +16,24 @@ class CubicPuzzleController < ApplicationController
   def receive_stages
     raw_stages = CubicPuzzleStage.all.order(updated_at: :desc)
 
+    render json: receive_process(raw_stages)
+  end
+
+  def receive_official_stages
+    raw_stages = CubicPuzzleStage.where(stage_no: [1..20]).order(stage_no: :asc)
+
+    render json: receive_process(raw_stages)
+  end
+
+  def receive_edited_stages
+    raw_stages = CubicPuzzleStage.where(stage_no: 0).order(updated_at: :desc)
+
+    render json: receive_process(raw_stages)
+  end
+
+  private
+  
+  def receive_process(raw_stages)
     stages = []
 
     raw_stages.each do |raw_stage|
@@ -30,18 +48,8 @@ class CubicPuzzleController < ApplicationController
       stages.append stage
     end
 
-    output = {
+    {
       stages: stages
     }
-
-    render json: output
-  end
-
-  def receive_official_stages
-
-  end
-
-  def receive_edited_stages
-
   end
 end
