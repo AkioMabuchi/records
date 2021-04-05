@@ -36,4 +36,12 @@ class CubicPuzzleController < ApplicationController
 
     render json: output
   end
+
+  def receive_official_stages
+
+  end
+
+  def receive_edited_stages
+
+  end
 end
