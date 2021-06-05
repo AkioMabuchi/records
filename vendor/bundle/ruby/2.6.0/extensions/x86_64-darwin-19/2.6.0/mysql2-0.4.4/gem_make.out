@@ -1,5 +1,5 @@
 current directory: /Users/amestric/rails/records/vendor/bundle/ruby/2.6.0/gems/mysql2-0.4.4/ext/mysql2
-/Users/amestric/.rbenv/versions/2.6.1/bin/ruby -I /Users/amestric/.rbenv/versions/2.6.1/lib/ruby/2.6.0 -r ./siteconf20201216-88462-hgiuxw.rb extconf.rb --with-opt-dir\=/usr/local/opt/openssl@1.1
+/Users/amestric/.rbenv/versions/2.6.1/bin/ruby -I /Users/amestric/.rbenv/versions/2.6.1/lib/ruby/2.6.0 -r ./siteconf20210605-58835-214ulc.rb extconf.rb --with-opt-dir\=/usr/local/opt/openssl@1.1
 checking for ruby/thread.h... yes
 checking for rb_thread_call_without_gvl() in ruby/thread.h... yes
 checking for rb_thread_blocking_region()... no
@@ -31,4 +31,4 @@ linking shared-object mysql2/mysql2.bundle
 
 current directory: /Users/amestric/rails/records/vendor/bundle/ruby/2.6.0/gems/mysql2-0.4.4/ext/mysql2
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 mysql2.bundle ./.gem.20201216-88462-14fggeg/mysql2
+/usr/bin/install -c -m 0755 mysql2.bundle ./.gem.20210605-58835-826t03/mysql2

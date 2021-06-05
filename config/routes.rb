@@ -10,4 +10,6 @@ Rails.application.routes.draw do
   get "/#{Rails.application.credentials.access_key[:cubic_puzzle_receive_official]}/receive", to: "cubic_puzzle#receive_official_stages"
   get "/#{Rails.application.credentials.access_key[:cubic_puzzle_receive_edited]}/receive", to: "cubic_puzzle#receive_edited_stages"
   post "/#{Rails.application.credentials.access_key[:cubic_puzzle_send]}/send", to: "cubic_puzzle#send_stage"
+  get "/#{Rails.application.credentials[:access_key][:twinkle_hopper_receive]}/receive", to: "twinkle_hopper#receive_records"
+  post "/#{Rails.application.credentials[:access_key][:twinkle_hopper_send]}/send", to: "twinkle_hopper#send_record"
 end

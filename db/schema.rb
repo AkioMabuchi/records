@@ -10,9 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_05_005438) do
+ActiveRecord::Schema.define(version: 2021_06_05_055131) do
 
-  create_table "cubic_puzzle_stages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "cubic_puzzle_stages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "title"
     t.string "name"
     t.string "floors"
@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 2021_04_05_005438) do
     t.integer "stage_no", default: 0, null: false
   end
 
-  create_table "fairy_puzzle_original_stages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "fairy_puzzle_original_stages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name"
     t.string "title"
     t.string "field"
@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 2021_04_05_005438) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "neondrome_records", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "neondrome_records", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "player_id"
     t.string "name"
     t.integer "score"
@@ -40,29 +40,15 @@ ActiveRecord::Schema.define(version: 2021_04_05_005438) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "psyber_zone_records", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "twinkle_hopper_records", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "player_id"
-    t.string "name"
-    t.integer "score"
+    t.string "player_name"
+    t.integer "clear_time"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "unity1week16th_records", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.string "user"
-    t.integer "score"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "unity1week16ths", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.string "user"
-    t.integer "score"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "unity1week17ths", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "unity1week17ths", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "hash"
     t.string "name"
     t.integer "score"
