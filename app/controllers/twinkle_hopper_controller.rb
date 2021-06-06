@@ -4,10 +4,11 @@ class TwinkleHopperController < ApplicationController
   def send_record
     record = TwinkleHopperRecord.find_by(player_id: params[:player_id])
     if record
-      record.player_name = params[:player_name]
-      record.clear_time = params[:clear_time]
-
-      record.save!
+      if params[:clear_time] < record.clear_time
+        record.player_name = params[:player_name]
+        record.clear_time = params[:clear_time]
+        record.save!
+      end
     else
       new_record = TwinkleHopperRecord.new(
         player_id: params[:player_id],

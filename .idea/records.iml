@@ -264,24 +264,24 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library">
-      <library name="bootsnap (vbundled(1.5.1)) [path][gem]" type="rubylib">
+      <library name="bootsnap (vbundled(1.7.5)) [path][gem]" type="rubylib">
         <properties>
           <option name="version" value="4" />
         </properties>
         <CLASSES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/bootsnap-1.5.1/exe" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/bootsnap-1.5.1/ext" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/bootsnap-1.5.1/lib" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/bootsnap-1.7.5/exe" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/bootsnap-1.7.5/ext" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/bootsnap-1.7.5/lib" />
         </CLASSES>
         <JAVADOC />
         <SOURCES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/bootsnap-1.5.1/exe" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/bootsnap-1.5.1/ext" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/bootsnap-1.5.1/lib" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/bootsnap-1.7.5/exe" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/bootsnap-1.7.5/ext" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/bootsnap-1.7.5/lib" />
         </SOURCES>
         <excluded>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/bootsnap-1.5.1/exe" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/bootsnap-1.5.1/ext" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/bootsnap-1.7.5/exe" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/bootsnap-1.7.5/ext" />
         </excluded>
       </library>
     </orderEntry>
