@@ -12,4 +12,6 @@ Rails.application.routes.draw do
   post "/#{Rails.application.credentials.access_key[:cubic_puzzle_send]}/send", to: "cubic_puzzle#send_stage"
   get "/#{Rails.application.credentials[:access_key][:twinkle_hopper_receive]}/receive", to: "twinkle_hopper#receive_records"
   post "/#{Rails.application.credentials[:access_key][:twinkle_hopper_send]}/send", to: "twinkle_hopper#send_record"
+  get "/#{Rails.application.credentials[:access_key][:unityroom_typing]}/receive", to: "unityroom_typing#receive_records"
+  post "/#{Rails.application.credentials[:access_key][:unityroom_typing]}/send", to: "unityroom_typing#send_record"
 end
