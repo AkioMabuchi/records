@@ -29,7 +29,7 @@ class UnityroomTypingController < ApplicationController
   end
 
   def receive_records
-    raw_records = UnityroomTypingRecord.order(typing_speed: :desc)
+    raw_records = UnityroomTypingRecord.order(typing_speed: :desc, accuracy: :desc)
     records = []
 
     raw_records.each do |raw_record|
@@ -40,7 +40,8 @@ class UnityroomTypingController < ApplicationController
         typeCount: raw_record.type_count,
         missCount: raw_record.miss_count,
         speed: raw_record.typing_speed,
-        accuracy: raw_record.accuracy
+        accuracy: raw_record.accuracy,
+        date: raw_record.updated_at.strftime("%Y/%m/%d")
       }
 
       records.append record
