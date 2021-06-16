@@ -4,7 +4,7 @@ class UnityroomTypingController < ApplicationController
   def send_record
     record = UnityroomTypingRecord.find_by(player_id: params[:player_id])
     if record
-      if params[:typing_speed].to_i < record.typing_speed
+      if params[:typing_speed].to_i > record.typing_speed
         record.player_name = params[:player_name]
         record.time_count = params[:time_count]
         record.type_count = params[:type_count]
