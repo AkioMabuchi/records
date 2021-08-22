@@ -38,9 +38,8 @@ class TwinkleHopperController < ApplicationController
 
     if player
       information = {
-        player_id: player.player_token,
-        player_name: player.player_name,
-        hopper_color_hue: player.hopper_color_hue
+        PlayerName: player.player_name,
+        HopperColorHue: player.hopper_color_hue
       }
 
       render json: information
