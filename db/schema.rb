@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_09_105423) do
+ActiveRecord::Schema.define(version: 2021_08_13_080005) do
 
   create_table "cubic_puzzle_stages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "title"
@@ -36,6 +36,33 @@ ActiveRecord::Schema.define(version: 2021_06_09_105423) do
     t.string "player_id"
     t.string "name"
     t.integer "score"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "twinkle_hopper_information", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.float "position_x"
+    t.float "position_y"
+    t.float "position_z"
+    t.float "rotation_w"
+    t.float "rotation_x"
+    t.float "rotation_y"
+    t.float "rotation_z"
+    t.float "velocity_x"
+    t.float "velocity_y"
+    t.float "angular_velocity"
+    t.integer "time_count"
+    t.integer "jump_count"
+    t.bigint "player_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["player_id"], name: "index_twinkle_hopper_information_on_player_id"
+  end
+
+  create_table "twinkle_hopper_players", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.string "player_token"
+    t.string "player_name"
+    t.float "hopper_color_hue"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -68,4 +95,5 @@ ActiveRecord::Schema.define(version: 2021_06_09_105423) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "twinkle_hopper_information", "twinkle_hopper_players", column: "player_id"
 end

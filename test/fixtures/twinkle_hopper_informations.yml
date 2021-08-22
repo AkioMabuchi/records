@@ -1,0 +1,29 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  position_x: 1.5
+  position_y: 1.5
+  posiition_z: 1.5
+  rotation_w: 1.5
+  rotation_x: 1.5
+  rotation_y: 1.5
+  rotation_z: 1.5
+  velocity_x: 1.5
+  velocity_y: 1.5
+  angular_velocity: 1.5
+  time_count: 1
+  jump_count: 1
+
+two:
+  position_x: 1.5
+  position_y: 1.5
+  posiition_z: 1.5
+  rotation_w: 1.5
+  rotation_x: 1.5
+  rotation_y: 1.5
+  rotation_z: 1.5
+  velocity_x: 1.5
+  velocity_y: 1.5
+  angular_velocity: 1.5
+  time_count: 1
+  jump_count: 1
