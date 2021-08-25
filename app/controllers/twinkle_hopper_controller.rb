@@ -102,28 +102,28 @@ class TwinkleHopperController < ApplicationController
 
     raw_records.each do |raw_record|
       record = {
-        PlayerId: raw_record.player.player_token,
-        PlayerName: raw_record.player.player_name,
-        HopperColorHue: raw_record.player.hopper_color_hue,
-        HopperPositionX: raw_record.position_x,
-        HopperPositionY: raw_record.position_y,
-        HopperPositionZ: raw_record.position_z,
-        HopperRotationW: raw_record.rotation_w,
-        HopperRotationX: raw_record.rotation_x,
-        HopperRotationY: raw_record.rotation_y,
-        HopperRotationZ: raw_record.rotation_z,
-        HopperVelocityX: raw_record.velocity_x,
-        HopperVelocityY: raw_record.velocity_y,
-        HopperAngularVelocity: raw_record.angular_velocity,
-        HopperJumpCount: raw_record.jump_count,
-        TimeCount: raw_record.time_count
+        playerId: raw_record.player.player_token,
+        playerName: raw_record.player.player_name,
+        hopperColorHue: raw_record.player.hopper_color_hue,
+        hopperPositionX: raw_record.position_x,
+        hopperPositionY: raw_record.position_y,
+        hopperPositionZ: raw_record.position_z,
+        hopperRotationW: raw_record.rotation_w,
+        hopperRotationX: raw_record.rotation_x,
+        hopperRotationY: raw_record.rotation_y,
+        hopperRotationZ: raw_record.rotation_z,
+        hopperVelocityX: raw_record.velocity_x,
+        hopperVelocityY: raw_record.velocity_y,
+        hopperAngularVelocity: raw_record.angular_velocity,
+        hopperJumpCount: raw_record.jump_count,
+        timeCount: raw_record.time_count
       }
 
       records.append record
     end
 
     output = {
-      PlayerHopperRecords: records
+      playerHopperRecords: records
     }
 
     render json: output
