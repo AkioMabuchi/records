@@ -26,7 +26,7 @@ class TwinkleHopperController < ApplicationController
 
     if player
       player.player_name = params[:player_name]
-      player.hopper_color_hue = params[:hopper_color_hue]
+      player.hopper_color_hue = params[:hopper_color_hue].to_f
       player.save!
     else
       raise StandardError
@@ -49,7 +49,47 @@ class TwinkleHopperController < ApplicationController
   end
 
   def send_information
+    player = TwinkleHopperPlayer.find_by(player_token: params[:player_token])
 
+    if player
+      information = player.information
+      if information
+        information.position_x = params[:position_x]
+        information.position_y = params[:position_y]
+        information.position_z = params[:position_z]
+        information.rotation_w = params[:rotation_w]
+        information.rotation_x = params[:rotation_x]
+        information.rotation_y = params[:rotation_y]
+        information.rotation_z = params[:rotation_z]
+        information.velocity_x = params[:velocity_x]
+        information.velocity_y = params[:velocity_y]
+        information.angular_velocity = params[:angular_velocity]
+        information.jump_count = params[:jump_count]
+        information.time_count = params[:time_count]
+
+        information.save!
+      else
+        new_information = TwinkleHopperInformation.new(
+          player_id: player.id,
+          position_x: params[:position_x],
+          position_y: params[:position_y],
+          position_z: params[:position_z],
+          rotation_w: params[:rotation_w],
+          rotation_x: params[:rotation_x],
+          rotation_y: params[:rotation_y],
+          rotation_z: params[:rotation_z],
+          velocity_x: params[:velocity_x],
+          velocity_y: params[:velocity_y],
+          angular_velocity: params[:angular_velocity],
+          jump_count: params[:jump_count],
+          time_count: params[:time_count]
+        )
+
+        new_information.save!
+      end
+    else
+      raise StandardError
+    end
   end
 
   def send_information_2
@@ -57,7 +97,36 @@ class TwinkleHopperController < ApplicationController
   end
 
   def receive_information
+    raw_records = TwinkleHopperInformation.joins(:player)
+    records = []
 
+    raw_records.each do |raw_record|
+      record = {
+        PlayerId: raw_record.player_token,
+        PlayerName: raw_record.player_name,
+        HopperColorHue: raw_record.hopper_color_hue,
+        HopperPositionX: raw_record.position_x,
+        HopperPositionY: raw_record.position_y,
+        HopperPositionZ: raw_record.position_z,
+        HopperRotationW: raw_record.rotation_w,
+        HopperRotationX: raw_record.rotation_x,
+        HopperRotationY: raw_record.rotation_y,
+        HopperRotationZ: raw_record.rotation_z,
+        HopperVelocityX: raw_record.velocity_x,
+        HopperVelocityY: raw_record.velocity_y,
+        HopperAngularVelocity: raw_record.angular_velocity,
+        HopperJumpCount: raw_record.jump_count,
+        TimeCount: raw_record.time_count
+      }
+
+      records.append record
+    end
+
+    output = {
+      PlayerHopperRecords: records
+    }
+
+    render json: output
   end
 
   def receive_information_2
