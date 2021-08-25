@@ -102,8 +102,8 @@ class TwinkleHopperController < ApplicationController
 
     raw_records.each do |raw_record|
       record = {
-        PlayerId: raw_record.player_token,
-        PlayerName: raw_record.player_name,
+        PlayerId: raw_record.player.player_token,
+        PlayerName: raw_record.player.player_name,
         HopperColorHue: raw_record.hopper_color_hue,
         HopperPositionX: raw_record.position_x,
         HopperPositionY: raw_record.position_y,
