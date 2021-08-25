@@ -1,7 +1,7 @@
 class TwinkleHopperInformation < ApplicationRecord
   self.table_name = "twinkle_hopper_information"
 
-  belongs_to :player, class_name: "TwinkleHopperPlayer"
+  belongs_to :player, class_name: "TwinkleHopperPlayer", foreign_key: :player_id
   validates :player_id, presence: true, uniqueness: {case_sensitive: true}
   validates :position_x, presence: true
   validates :position_y, presence: true
