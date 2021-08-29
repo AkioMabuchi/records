@@ -133,6 +133,23 @@ class TwinkleHopperController < ApplicationController
 
   end
 
+  def destroy_information
+    player = TwinkleHopperPlayer.find_by(player_token: params[:player_token])
+
+    if player
+      information = player.information
+      if information
+        information.destroy!
+      end
+    else
+      raise StandardError
+    end
+  end
+
+  def destroy_information_2
+
+  end
+
   def send_record
     record = TwinkleHopperRecord.find_by(player_id: params[:player_id])
     if record

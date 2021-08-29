@@ -24,6 +24,8 @@ Rails.application.routes.draw do
   get "/#{Rails.application.credentials[:access_key][:twinkle_hopper_receive_records_2]}/receive", to: "twinkle_hopper#receive_records_2"
   post "/#{Rails.application.credentials[:access_key][:twinkle_hopper_send_record]}/send", to: "twinkle_hopper#send_record"
   post "/#{Rails.application.credentials[:access_key][:twinkle_hopper_send_record_2]}/send", to: "twinkle_hopper#send_record_2"
+  post "/#{Rails.application.credentials[:access_key][:twinkle_hopper_destroy_information]}/destroy", to: "twinkle_hopper#destroy_information"
+  post "/#{Rails.application.credentials[:access_key][:twinkle_hopper_destroy_information_2]}/destroy", to: "twinkle_hopper#destroy_information_2"
 
   get "/#{Rails.application.credentials[:access_key][:unityroom_typing]}/receive", to: "unityroom_typing#receive_records"
   post "/#{Rails.application.credentials[:access_key][:unityroom_typing]}/send", to: "unityroom_typing#send_record"
