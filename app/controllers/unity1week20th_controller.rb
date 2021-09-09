@@ -1,4 +1,6 @@
 class Unity1week20thController < ApplicationController
+  protect_from_forgery except: [:send_stage]
+
   def send_stage
     stage = FloatingPuzzleStage.new(
       author: params[:author],
