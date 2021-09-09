@@ -29,4 +29,8 @@ Rails.application.routes.draw do
 
   get "/#{Rails.application.credentials[:access_key][:unityroom_typing]}/receive", to: "unityroom_typing#receive_records"
   post "/#{Rails.application.credentials[:access_key][:unityroom_typing]}/send", to: "unityroom_typing#send_record"
+
+  post "/#{Rails.application.credentials[:access_key][:unityroom20th][:send_stage]}/send", to: "unity1week20th#send_stage"
+  get "/#{Rails.application.credentials[:access_key][:unityroom20th][:receive_stages]}/receive", to: "unity1week20th#receive_stages"
+
 end

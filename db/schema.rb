@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_13_080005) do
+ActiveRecord::Schema.define(version: 2021_09_09_141454) do
 
   create_table "cubic_puzzle_stages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "title"
@@ -28,6 +28,14 @@ ActiveRecord::Schema.define(version: 2021_08_13_080005) do
     t.string "title"
     t.string "field"
     t.integer "mp"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "floating_puzzle_stages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.string "author"
+    t.string "stage_name"
+    t.string "map_info"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

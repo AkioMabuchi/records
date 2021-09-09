@@ -5,7 +5,9 @@ class TwinkleHopperController < ApplicationController
     :send_information,
     :send_information_2,
     :send_record,
-    :send_record_2
+    :send_record_2,
+    :destroy_information,
+    :destroy_information_2
   ]
 
   def send_player_initialization
