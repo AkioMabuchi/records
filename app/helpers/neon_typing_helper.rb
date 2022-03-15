@@ -1,0 +1,2 @@
+module NeonTypingHelper
+end

@@ -33,4 +33,7 @@ Rails.application.routes.draw do
   post "/#{Rails.application.credentials[:access_key][:unity1week20th][:send_stage]}/send", to: "unity1week20th#send_stage"
   get "/#{Rails.application.credentials[:access_key][:unity1week20th][:receive_stages]}/receive", to: "unity1week20th#receive_stages"
 
+  post "/#{Rails.application.credentials[:access_key][:neon_typing]}/send", to: "neon_typing#send_record"
+  get "/#{Rails.application.credentials[:access_key][:neon_typing]}/receive", to: "neon_typing#receive_records"
+
 end
