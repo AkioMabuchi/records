@@ -1,4 +1,6 @@
 class Unity1week22ndRecordsController < ApplicationController
+  protect_from_forgery except: [:send_record]
+
   def send_record
     record = Unity1week22ndRecord.where(picture_id: params[:picture_id]).find_by(player_id: params[:player_id])
     if record
