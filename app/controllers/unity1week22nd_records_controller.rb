@@ -25,7 +25,7 @@ class Unity1week22ndRecordsController < ApplicationController
 
   def receive_records
     records = []
-    if params[:picture_id]
+    if params[:picture_name]
       raw_records = Unity1week22ndRecord.where(picture_name: params[:picture_name]).order(solve_time: :asc)
       raw_records.each do |raw_record|
         record = {
